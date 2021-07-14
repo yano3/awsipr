@@ -17,3 +17,15 @@ changelog:
     exclude:
       - Merge pull request
       - Merge branch
+brews:
+  -
+    name: awsipr
+    tap:
+      owner: yano3
+      name: homebrew-tap
+    commit_author:
+      name: Teppei Yano
+      email: buckelwal@gmail.com
+    homepage: https://github.com/yano3/awsipr
+    description: Checks whether an IP address is in AWS ranges.
+    license: MIT
