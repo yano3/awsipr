@@ -24,6 +24,7 @@ brews:
     tap:
       owner: yano3
       name: awsipr
+    folder: HomebrewFormula
     commit_author:
       name: Teppei Yano
       email: buckelwal@gmail.com
