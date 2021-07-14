@@ -23,7 +23,7 @@ brews:
     name: awsipr
     tap:
       owner: yano3
-      name: homebrew-tap
+      name: awsipr
     commit_author:
       name: Teppei Yano
       email: buckelwal@gmail.com
