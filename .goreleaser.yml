@@ -1,11 +1,13 @@
 builds:
-  - goos:
+  -
+    goos:
       - linux
       - darwin
     goarch:
       - amd64
 archives:
-  - format: zip
+  -
+    format: zip
     name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}'
     files:
       - none*
