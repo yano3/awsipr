@@ -34,7 +34,6 @@ type Prefix struct {
 	IPPrefix           string `json:"ip_prefix"`
 	Region             string `json:"region"`
 	Service            string `json:"service"`
-	NetworkBorderGroup string `json:"network_border_group"`
 }
 
 // Run invokes the CLI with the given arguments.
@@ -69,9 +68,14 @@ func (cli *CLI) Run(args []string) int {
 
 		if ipnet.Contains(ip) {
 			found = true
-			fmt.Println(v.Service)
-			fmt.Println(v.Region)
-			fmt.Println(v.IPPrefix)
+
+			j, err := json.MarshalIndent(v, "", "  ")
+			if err != nil {
+				fmt.Println(err)
+				return ExitCodeError
+			}
+
+			fmt.Println(string(j))
 		}
 	}
 
