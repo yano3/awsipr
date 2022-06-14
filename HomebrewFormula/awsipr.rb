@@ -5,32 +5,32 @@
 class Awsipr < Formula
   desc "Checks whether an IP address is in AWS ranges."
   homepage "https://github.com/yano3/awsipr"
-  version "0.1.2"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/yano3/awsipr/releases/download/v0.1.2/awsipr_darwin_amd64.zip"
-    sha256 "8762604017ad3765f568c20c468205381cfb3e40b0f6a94d0325db99a9b8f574"
-
-    def install
-      bin.install "awsipr"
-    end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Awsipr
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/yano3/awsipr/releases/download/v0.2.0/awsipr_darwin_arm64.zip"
+      sha256 "b4b0ac8cda9c00283d7520999155ee37ac6a4e31b93a3c82f394ca7fb29e461e"
+
+      def install
+        bin.install "awsipr"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/yano3/awsipr/releases/download/v0.2.0/awsipr_darwin_amd64.zip"
+      sha256 "3146cf0f5276677bc46e099551dc29a1f6149b84d63f49b8ffce63dd1442e709"
+
+      def install
+        bin.install "awsipr"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/yano3/awsipr/releases/download/v0.1.2/awsipr_linux_amd64.zip"
-      sha256 "ceccc8ef282d5033c1f54008aceaf8af3a425cf8102c549f79988826849ea607"
+      url "https://github.com/yano3/awsipr/releases/download/v0.2.0/awsipr_linux_amd64.zip"
+      sha256 "b88027c6bcb3524345a795903fa1c66990a0374dbe4e602ef35f278ba2d3a559"
 
       def install
         bin.install "awsipr"
