@@ -1,8 +1,13 @@
 builds:
   -
-    goos:
-      - linux
-      - darwin
+    id: macos
+    goos: [darwin]
+    goarch:
+      - amd64
+      - arm64
+  -
+    id: linux
+    goos: [linux]
     goarch:
       - amd64
 archives:
